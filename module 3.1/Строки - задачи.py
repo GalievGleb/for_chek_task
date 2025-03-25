@@ -1,6 +1,3 @@
-from codecs import replace_errors
-from runpy import run_path
-
 
 def is_anagram(s1: str, s2: str) -> bool:
     """
