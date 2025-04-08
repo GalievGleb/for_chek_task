@@ -1,11 +1,28 @@
+from typing import Tuple, Dict, Any, Callable
 from faker import Faker
 from constant import BASE_URL, HEADERS
 import requests
+import pytest
 
 faker = Faker()
 
 class TestBooking:
-    def test_create_booking(auth_session, booking_data, create_booking, delete_booking):
+    """
+    Набор автотестов для проверки CRUD-операций над сущностью 'booking'.
+
+    Сценарии включают:
+    - Позитивные проверки создания, полного и частичного обновления, получения и удаления бронирования.
+    - Негативные сценарии, такие как обновление с невалидными данными, отсутствие токена и запрос несуществующего ID.
+    """
+
+    @pytest.mark.positive
+    def test_create_booking(
+            self,
+            auth_session: requests.Session,
+            booking_data: Dict[str, Any],
+            create_booking: Tuple[int, Dict[str, Any]],
+            delete_booking: Callable[[int], None]
+    ) -> None:
         """Проверка создания данных"""
         # Создаем бронирование через фикстуру
         booking_id, create_response = create_booking  # Фикстура уже возвращает кортеж, мы просто распаковываем его
@@ -19,7 +36,14 @@ class TestBooking:
         # Удаляем бронирование через фикстуру
         delete_booking(booking_id)
 
-    def test_full_update_booking(self, auth_session, booking_data, create_booking, delete_booking):
+    @pytest.mark.positive
+    def test_full_update_booking(
+        self,
+        auth_session: requests.Session,
+        booking_data: Dict[str, Any],
+        create_booking: Tuple[int, Dict[str, Any]],
+        delete_booking: Callable[[int], None]
+    ) -> None:
         """Проверка полного обновления данных"""
         # Создаем бронирование через фикстуру
         booking_id, create_response = create_booking
@@ -43,7 +67,14 @@ class TestBooking:
         # Удаляем бронирование через фикстуру
         delete_booking(booking_id)
 
-    def test_partial_update_booking(self, auth_session, booking_data, create_booking, delete_booking):
+    @pytest.mark.positive
+    def test_partial_update_booking(
+        self,
+        auth_session: requests.Session,
+        booking_data: Dict[str, Any],
+        create_booking: Tuple[int, Dict[str, Any]],
+        delete_booking: Callable[[int], None]
+    ) -> None:
         """Проверка частичного обновления данных"""
         # Создаем бронирование через фикстуру
         booking_id, create_response = create_booking
@@ -64,40 +95,44 @@ class TestBooking:
         # Удаляем бронирование через фикстуру
         delete_booking(booking_id)
 
-    def test_get_all_bookings(self, auth_session):
-        """Получение всех бронирований"""
-        get_response = auth_session.get(f"{BASE_URL}/booking")
+    @pytest.mark.positive
+    def test_get_all_bookings(self, auth_session: requests.Session) -> None:
+        """Позитивный тест: получение всех бронирований"""
 
-        # Проверяем, что ответ успешный
-        assert get_response.status_code == 200, "Ошибка при получении списка бронирований"
+        response = auth_session.get(f"{BASE_URL}/booking")
+        assert response.status_code == 200, "Ошибка при получении списка бронирований"
 
-        # Получаем данные из ответа
-        bookings = get_response.json()
-
-        # Проверяем, что ответ - это список
+        bookings = response.json()
         assert isinstance(bookings, list), "Ответ должен быть в виде списка"
-        print(get_response.json())
 
-        # Если в списке есть хотя бы одно бронирование
-        if bookings:
-            for booking in bookings:
-                # Проверяем, что каждый элемент в списке является словарем, содержащим ключ 'bookingid'
-                assert "bookingid" in booking, "Каждое бронирование должно содержать 'bookingid'"
+        if not bookings:
+            pytest.skip("Нет доступных бронирований для проверки")
 
-                # Проверяем, что поля 'firstname', 'lastname' могут быть отсутствующими, если их нет
-                if "firstname" in booking:
-                    assert isinstance(booking["firstname"], str), "Firstname должен быть строкой"
-                if "lastname" in booking:
-                    assert isinstance(booking["lastname"], str), "Lastname должен быть строкой"
-                if "totalprice" in booking:
-                    assert isinstance(booking["totalprice"], int), "Totalprice должен быть целым числом"
-                if "additionalneeds" in booking:
-                    assert isinstance(booking["additionalneeds"], str), "Additionalneeds должно быть строкой"
+        for booking in bookings:
+            assert isinstance(booking, dict), "Каждое бронирование должно быть словарем"
+            assert "bookingid" in booking, "Каждое бронирование должно содержать 'bookingid'"
 
-        else:
-            print("Нет бронирований на данный момент.")
-    # negative checks
-    def test_update_booking_with_invalid_data(self, auth_session, booking_data, create_booking, delete_booking):
+            expected_types = {
+                "firstname": str,
+                "lastname": str,
+                "totalprice": int,
+                "additionalneeds": str,
+            }
+
+            for field, expected_type in expected_types.items():
+                if field in booking:
+                    assert isinstance(booking[field], expected_type), \
+                        f"{field} должно быть типа {expected_type.__name__}"
+
+
+    @pytest.mark.negative
+    def test_update_booking_with_invalid_data(
+        self,
+        auth_session: requests.Session,
+        booking_data: Dict[str, Any],
+        create_booking: Tuple[int, Dict[str, Any]],
+        delete_booking: Callable[[int], None]
+    ) -> None:
         """Проверка поведения системы при передачи в одно из полей некорректное значение (int вместо str)"""
         # Создаем бронирование через фикстуру
         booking_id, create_response = create_booking
@@ -112,7 +147,14 @@ class TestBooking:
         # Удаляем бронирование после теста
         delete_booking(booking_id)
 
-    def test_update_booking_without_token(self, auth_session, booking_data, create_booking, delete_booking):
+    @pytest.mark.negative
+    def test_update_booking_without_token(
+        self,
+        auth_session: requests.Session,
+        booking_data: Dict[str, Any],
+        create_booking: Tuple[int, Dict[str, Any]],
+        delete_booking: Callable[[int], None]
+    ) -> None:
         """Проверка поведения системы при отсутствии авторизационного токена"""
         # Создаем бронирование через фикстуру
         booking_id, create_response = create_booking
@@ -130,7 +172,8 @@ class TestBooking:
         # Удаляем бронирование после теста
         delete_booking(booking_id)
 
-    def test_get_booking_with_nonexistent_id(self, auth_session, delete_booking):
+    @pytest.mark.negative
+    def test_get_booking_with_nonexistent_id(self, auth_session: requests.Session) -> None:
         """Попытка получения бронирования с несуществующим ID"""
         nonexistent_booking_id = 9999
         get_response = auth_session.get(f"{BASE_URL}/booking/{nonexistent_booking_id}")
