@@ -2,7 +2,7 @@ import pytest
 import requests
 from typing import Dict, Callable, Generator
 from requests import Session
-from module_4.task_2.config.constant import BASE_URL, AUTH_HEADERS, HEADERS, USERNAME, PASSWORD
+from module_4.task_2.config.constant import BASE_URL, AUTH_HEADERS, HEADERS, AUTH_DATA
 from faker import Faker
 import logging
 
@@ -19,14 +19,7 @@ def auth_session() -> Session:
     session.headers.update(AUTH_HEADERS)
 
     # Данные для получения токена
-    data = {
-        "grant_type": "password",
-        "username": USERNAME,
-        "password": PASSWORD,
-        "scope": "",
-        "client_id": "string",
-        "client_secret": "string"
-    }
+    data = AUTH_DATA
 
     auth_response = session.post(f"{BASE_URL}/api/v1/login/access-token", data=data, headers=AUTH_HEADERS)
     assert auth_response.status_code == 200, f"Ошибка авторизации, статус код: {auth_response.status_code}"

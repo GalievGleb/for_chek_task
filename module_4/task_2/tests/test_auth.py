@@ -1,6 +1,6 @@
 import requests
 import logging
-from module_4.task_2.config.constant import BASE_URL, AUTH_HEADERS, USERNAME
+from module_4.task_2.config.constant import BASE_URL, AUTH_HEADERS, AUTH_DATA
 class TestAuth:
     """
     Набор тестов, проверяющих корректность выдачи токена и обработки ошибок авторизации.
@@ -43,14 +43,10 @@ class TestAuth:
         Проверяет, что при отправке некорректных данных в авторизацию возвращается статус 422.
         """
         session = requests.Session()
-        invalid_data = {
-            "grant_type": "password",
-            "username": "katebb0310@gmail.com",
-            # отсутствует пароль
-            "scope": "",
-            "client_id": "string",
-            "client_secret": "string"
-        }
+
+        invalid_data = AUTH_DATA.copy()
+        invalid_data.pop('password', None)  # Удаляем ключ 'password'
+
         response = session.post(f"{BASE_URL}/api/v1/login/access-token", data=invalid_data, headers=AUTH_HEADERS)
         assert response.status_code == 422, f"Ожидался статус код 422, но получен {response.status_code}"
         logging.info(f"Ответ 422 подтверждён: {response.status_code}")
@@ -62,14 +58,8 @@ class TestAuth:
         """
         session = requests.Session()
 
-        invalid_data = {
-            "grant_type": "password",
-            "username": USERNAME,
-            "password": "qwerty",  # неверный пароль
-            "scope": "",
-            "client_id": "string",
-            "client_secret": "string"
-        }
+        invalid_data = AUTH_DATA.copy()
+        invalid_data['password'] = 'qwerty'  # имитация пароля с ошибкой
 
         response = session.post(f"{BASE_URL}/api/v1/login/access-token", data=invalid_data, headers=AUTH_HEADERS)
 
