@@ -9,7 +9,7 @@ class CheckoutCompletePage(BasePage):
         super().__init__(page)
         self._endpoint = '/checkout-complete.html'
 
-    def checking_order_completion(self) -> None:
+    def checking_order_completion(self):
         """
         Проверяет, что заказ успешно завершён:
         - Отображается заголовок 'Checkout: Complete!'
@@ -22,7 +22,7 @@ class CheckoutCompletePage(BasePage):
         self.assert_text_in_element(THANK_YOU_HEADER, 'Thank you for your order!')
         self.assert_element_is_visible(BACK_HOME_BUTTON)
 
-    def logout(self) -> None:
+    def logout(self):
         """
         Выполняет выход из аккаунта:
         - Открывает бургер-меню

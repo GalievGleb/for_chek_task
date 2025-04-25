@@ -21,7 +21,6 @@ class TestBooking:
         check_delete_response = auth_session.get(f"{base_url}/booking/{booking_id}")
         assert check_delete_response.status_code == 404, f"Букинг с ID {booking_id} не был удален"
 
-
     def test_create_without_required_fields(self, auth_session, booking_data):
         """Проверка создания бронирования без обязательных полей.
             Тест последовательно пытается создать бронирование, удаляя каждое из обязательных полей.
@@ -63,7 +62,6 @@ class TestBooking:
         check_delete_response = auth_session.get(f"{base_url}/booking/{booking_id}")
         assert check_delete_response.status_code == 404, f"Букинг с ID {booking_id} не был удален"
 
-
     def test_update_without_token(self, auth_session_without_token, create_booking, update_booking_data):
         """Проверка обновления бронирования без авторизационного токена.
             Тест проверяет, что API возвращает ошибку 403 при попытке обновления бронирования
@@ -82,8 +80,7 @@ class TestBooking:
         print(auth_session_without_token.headers)
         assert update_response.status_code == 403, 'Формат ошибки отличается от ожидаемого'
 
-
-    def test_partial_update_booking_res(self, auth_session, create_booking, booking_data, part_req_data):
+    def test_partial_update_booking(self, auth_session, create_booking, booking_data, part_req_data):
         """
            Тестирование частичного обновления данных бронирования (PATCH-запрос) с проверкой ответа.
            Проверяет:
@@ -116,7 +113,6 @@ class TestBooking:
         check_delete_response = auth_session.get(f"{base_url}/booking/{booking_id}")
         assert check_delete_response.status_code == 404, f"Букинг с ID {booking_id} не был удален"
 
-
     def test_get_after_partial_update(self, auth_session, create_booking, part_req_data, booking_data):
         """
             Тестирование получения данных бронирования после частичного обновления.
@@ -145,7 +141,6 @@ class TestBooking:
         print(get_response.text)
         assert get_response.status_code == 200, f"Ошибка при получении букинга с ID {booking_id}"
         assert get_response.json() == check_data
-
 
     def test_get_all_items(self, auth_session, booking_data):
         """Проверка создания, получения и удаления нескольких бронирований.

@@ -42,7 +42,7 @@ class BasePage:
     def assert_text_in_element(self, selector: str, text: str) -> None:
         expect(self.page.locator(selector)).to_have_text(text)
 
-# не совсем поняла, зачем нужна эта проверка. Зачем проверять, что пост-код равнен 1234, если на предыдущем шаге это
-# вводится автоматически. Разве может ввестись что-то иное?
-#     def assert_input_value(self, selector, expected_value):
-#         expect(self.page.locator(selector)).to_have_text(expected_value)
+    # не совсем поняла, зачем нужна эта проверка. Зачем проверять, что пост-код равнен 1234, если на предыдущем шаге это
+    # вводится автоматически. Разве тест может ввестись что-то иное?
+    #  def assert_input_value(self, selector, expected_value):
+    #      expect(self.page.locator(selector)).to_have_text(expected_value)

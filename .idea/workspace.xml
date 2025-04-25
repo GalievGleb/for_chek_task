@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6aa521f-6a6f-43ca-b4a8-e92532987b15" name="Changes" comment="" />
+    <list default="true" id="b6aa521f-6a6f-43ca-b4a8-e92532987b15" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/clickup/tests/constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clickup/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clickup/utils/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.4/convert_seconds.py" beforeDir="false" afterPath="$PROJECT_DIR$/clickup/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.4/count_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/clickup/api_clients/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.4/power_of.py" beforeDir="false" afterPath="$PROJECT_DIR$/clickup/api_clients/task_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3.4/rectangle_area.py" beforeDir="false" afterPath="$PROJECT_DIR$/clickup/tests/conftets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_4_task1/test_create_booking.py" beforeDir="false" afterPath="$PROJECT_DIR$/module_4_task1/test_create_booking.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_5_playwright/pages/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/module_5_playwright/pages/base_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_5_playwright/pages/checkout_complete_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/module_5_playwright/pages/checkout_complete_page.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,73 +43,75 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for test_auth.TestAuth.executor": "Run",
-    "Python tests.Python tests for test_auth.TestAuth.test_login_with_invalid_email_format_does_not_return_500.executor": "Run",
-    "Python tests.Python tests for test_auth.TestAuth.test_post_422_invalid_login_data.executor": "Run",
-    "Python tests.Python tests for test_auth.TestBooking.executor": "Run",
-    "Python tests.Python tests for test_auth.TestBooking.test_get_401_without_token.executor": "Run",
-    "Python tests.Python tests for test_auth.TestBooking.test_get_404.executor": "Run",
-    "Python tests.Python tests for test_auth.TestBooking.test_get_token.executor": "Run",
-    "Python tests.Python tests for test_auth.test_get_token.executor": "Run",
-    "Python tests.Python tests for test_auth.test_invalid_login.executor": "Run",
-    "Python tests.Python tests for test_auth.test_no_server_error_on_user_errors.executor": "Run",
-    "Python tests.Python tests for test_auth.test_not_found.executor": "Run",
-    "Python tests.Python tests for test_booking.TestBooking.executor": "Run",
-    "Python tests.Python tests for test_booking.TestBooking.test_create_booking.executor": "Run",
-    "Python tests.Python tests for test_booking.TestBooking.test_full_update_booking.executor": "Run",
-    "Python tests.Python tests for test_booking.TestBooking.test_get_all_bookings.executor": "Run",
-    "Python tests.Python tests for test_booking.TestBooking.test_get_booking_with_nonexistent_id.executor": "Run",
-    "Python tests.Python tests for test_booking.TestBooking.test_partial_update_booking.executor": "Run",
-    "Python tests.Python tests for test_booking.TestBooking.test_update_booking_with_invalid_data.executor": "Run",
-    "Python tests.Python tests for test_booking.TestBooking.test_update_booking_without_token.executor": "Run",
-    "Python tests.Python tests for test_create_booking.TestBooking.executor": "Run",
-    "Python tests.Python tests for test_create_booking.TestBooking.test_create_booking.executor": "Run",
-    "Python tests.Python tests for test_create_booking.TestBooking.test_create_check_delete_booking.executor": "Run",
-    "Python tests.Python tests for test_create_booking.TestBooking.test_full_update_booking.executor": "Run",
-    "Python tests.Python tests for test_create_booking.TestBooking.test_get_all_bookings.executor": "Run",
-    "Python tests.Python tests for test_create_booking.TestBooking.test_get_booking_with_nonexistent_id.executor": "Run",
-    "Python tests.Python tests for test_create_booking.TestBooking.test_partial_update_booking.executor": "Run",
-    "Python tests.Python tests for test_create_booking.TestBooking.test_update_booking_with_invalid_data.executor": "Run",
-    "Python tests.Python tests for test_create_booking.TestBooking.test_update_booking_without_token.executor": "Run",
-    "Python tests.Python tests for test_folder.test_bad_request.executor": "Run",
-    "Python tests.Python tests for test_folder.test_get_token.executor": "Run",
-    "Python tests.Python tests for test_items.TestItems.executor": "Run",
-    "Python tests.Python tests for test_items.TestItems.test_check_pagination.executor": "Run",
-    "Python tests.Python tests for test_items.TestItems.test_create_delete_item.executor": "Run",
-    "Python tests.Python tests for test_items.TestItems.test_full_update_item.executor": "Run",
-    "Python tests.Python tests for test_items.TestItems.test_get_all_items.executor": "Run",
-    "Python tests.Python tests for test_items.test_check_pagination.executor": "Run",
-    "Python tests.Python tests for test_items.test_check_responce_structure.executor": "Run",
-    "Python tests.Python tests for test_items.test_create_check_delete_item.executor": "Run",
-    "Python tests.Python tests for test_items.test_create_delete_item.executor": "Run",
-    "Python tests.Python tests for test_items.test_delete_all_items.executor": "Run",
-    "Python tests.Python tests for test_items.test_full_update_item.executor": "Run",
-    "Python tests.Python tests for test_items.test_get_all_items.executor": "Run",
-    "Python tests.Python tests for test_items.test_partial_update_item.executor": "Run",
-    "Python tests.Python tests for test_patch_booking.TestBooking.test_create_update_delete_booking.executor": "Run",
-    "Python tests.Python tests in test_items.py.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "egor__pytest__api",
-    "last_opened_file_path": "/Users/katerina/Desktop/repositories/for_chek_task/module_4.2",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_auth.TestAuth.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_auth.TestAuth.test_login_with_invalid_email_format_does_not_return_500.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_auth.TestAuth.test_post_422_invalid_login_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_auth.TestBooking.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_auth.TestBooking.test_get_401_without_token.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_auth.TestBooking.test_get_404.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_auth.TestBooking.test_get_token.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_auth.test_get_token.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_auth.test_invalid_login.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_auth.test_no_server_error_on_user_errors.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_auth.test_not_found.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_booking.TestBooking.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_booking.TestBooking.test_create_booking.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_booking.TestBooking.test_full_update_booking.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_booking.TestBooking.test_get_all_bookings.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_booking.TestBooking.test_get_booking_with_nonexistent_id.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_booking.TestBooking.test_partial_update_booking.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_booking.TestBooking.test_update_booking_with_invalid_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_booking.TestBooking.test_update_booking_without_token.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_create_booking.TestBooking.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_create_booking.TestBooking.test_create_booking.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_create_booking.TestBooking.test_create_check_delete_booking.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_create_booking.TestBooking.test_full_update_booking.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_create_booking.TestBooking.test_get_all_bookings.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_create_booking.TestBooking.test_get_booking_with_nonexistent_id.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_create_booking.TestBooking.test_partial_update_booking.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_create_booking.TestBooking.test_update_booking_with_invalid_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_create_booking.TestBooking.test_update_booking_without_token.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_folder.test_bad_request.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_folder.test_get_token.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_items.TestItems.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_items.TestItems.test_check_pagination.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_items.TestItems.test_create_delete_item.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_items.TestItems.test_full_update_item.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_items.TestItems.test_get_all_items.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_items.test_check_pagination.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_items.test_check_responce_structure.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_items.test_create_check_delete_item.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_items.test_create_delete_item.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_items.test_delete_all_items.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_items.test_full_update_item.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_items.test_get_all_items.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_items.test_partial_update_item.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_patch_booking.TestBooking.test_create_update_delete_booking.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_items.py.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.pytest for test_checkout.test_add_items_and_checkout.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for test_items.TestItems.test_create_invalid_item.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;kate__clickup&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/katerina/Desktop/repositories/for_chek_task/module_4.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/module_4.2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/clickup/tests" />
+      <recent name="$PROJECT_DIR$/module_5_playwright/tests" />
       <recent name="$PROJECT_DIR$/module_4/task_2/tests" />
       <recent name="$PROJECT_DIR$/module_4/task_2/config" />
       <recent name="$PROJECT_DIR$/module_4/task_1" />
-      <recent name="$PROJECT_DIR$/module_4/task_2" />
-      <recent name="$PROJECT_DIR$/module_4.2_task_2/config" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_auth.TestAuth">
+  <component name="RunManager" selected="Python tests.pytest for test_items.TestItems.test_create_invalid_item">
     <configuration name="Python tests for test_auth.TestAuth" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="for_chek_task" />
       <option name="ENV_FILES" value="" />
@@ -109,21 +124,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_auth.TestAuth&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_auth.TestAuth.test_login_with_invalid_email_format_does_not_return_500" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="for_chek_task" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_4/task_2/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_auth.TestAuth.test_login_with_invalid_email_format_does_not_return_500&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -157,28 +157,47 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_items.TestItems.test_create_delete_item" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_checkout.test_add_items_and_checkout" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="for_chek_task" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_4/task_2/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_5_playwright/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_items.TestItems.test_create_delete_item&quot;" />
+      <option name="_new_target" value="&quot;test_checkout.test_add_items_and_checkout&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_items.TestItems.test_create_invalid_item" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="for_chek_task" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/module_4_task2/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_items.TestItems.test_create_invalid_item&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test_items.TestItems.test_create_invalid_item" />
+        <item itemvalue="Python tests.pytest for test_checkout.test_add_items_and_checkout" />
+        <item itemvalue="Python tests.Python tests for test_items.TestItems" />
         <item itemvalue="Python tests.Python tests for test_auth.TestAuth" />
         <item itemvalue="Python tests.Python tests for test_auth.TestAuth.test_post_422_invalid_login_data" />
-        <item itemvalue="Python tests.Python tests for test_auth.TestAuth.test_login_with_invalid_email_format_does_not_return_500" />
-        <item itemvalue="Python tests.Python tests for test_items.TestItems" />
-        <item itemvalue="Python tests.Python tests for test_items.TestItems.test_create_delete_item" />
       </list>
     </recent_temporary>
   </component>
@@ -218,6 +237,11 @@
           <url>file://$PROJECT_DIR$/module_3.0/practical_tasks/triangle_check.py</url>
           <line>3</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/module_4_task1/test_create_booking.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
