@@ -1,0 +1,1 @@
+FINISH_BUTTON_SELECTOR = '[data-test="finish"]'
