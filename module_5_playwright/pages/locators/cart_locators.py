@@ -1,0 +1,1 @@
+CHECKOUT_BUTTON_SELECTOR = '[id = "checkout"]'
