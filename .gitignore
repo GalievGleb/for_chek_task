@@ -1,0 +1,39 @@
+# Кэш-файлы Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Кэш Jupyter Notebook
+.ipynb_checkpoints/
+
+# Кэш pytest
+.pytest_cache/
+
+# Кэш mypy
+.mypy_cache/
+
+# Кэш coverage.py
+.coverage
+.coverage.*
+htmlcov/
+
+# Кэш редакторов/IDE (примеры)
+.vscode/
+.idea/
+
+/venv/
+/2.2/
+
+/3.0/
+/3.1/
+/3.2/
+
+# Игнорировать autowiki в папке five
+five/autowiki
+
+five/playwright_testov.py
+
+5/autowiki.py
+5/playwright_testov.py
+
+clickup_tests/data.env
