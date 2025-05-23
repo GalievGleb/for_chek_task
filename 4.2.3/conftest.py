@@ -1,6 +1,10 @@
+from tokenize import endpats
+
 import pytest
 import requests
-from constant import AUTH_HEADERS, BASE_URL, AUTH_DATA, API_HEADERS
+from typing_extensions import final
+
+from constant import AUTH_HEADERS, BASE_URL, AUTH_DATA, API_HEADERS, endpoint
 from faker import Faker
 
 fake = Faker()
@@ -35,3 +39,21 @@ def item_data_20():
                 "title": fake.word(),
                 "description": fake.sentence(nb_words=10)
                 }
+
+
+@pytest.fixture()
+def delete_all_items_before_test_and_after(auth_session):
+    get_response = auth_session.get(endpoint)
+    assert get_response.status_code == 200, (
+        f"Ошибка получения списка элементов: {get_response.text}"
+    )
+
+    for item in get_response.json().get('data', []):
+        item_id = item['id']
+        del_response = auth_session.delete(f"{endpoint}{item_id}")
+        assert del_response.status_code in (200, 204), (
+            f"Ошибка удаления элементов: {get_response.text}")
+
+    final_check = auth_session.get(endpoint)
+    assert len(final_check.json().get("data",[])) == 0, (
+        "не все элементы были удалены перед тестом")

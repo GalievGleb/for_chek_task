@@ -13,4 +13,4 @@ def get_unique_elements(lst):
             unique_elements.append(element)
     return unique_elements
 
-print(get_unique_elements([1, 2, 2, 3, 4, 4, 4, 5]))  # [1, 2, 3, 4, 5]
+print(get_unique_elements([1, 2, 2, 3, 4, 4, 4, 5]))  # [1, 2, 3, 4, five]

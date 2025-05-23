@@ -33,19 +33,6 @@ def booking_data():
         "additionalneeds": "Breakfast"
     }
 
-@pytest.fixture()
-def upd_booking_data():
-    return {
-        "firstname": fake.first_name(),
-        "lastname": fake.last_name(),
-        "totalprice": fake.random_int(min=100, max=10000),
-        "depositpaid": True,
-        "bookingdates": {
-            "checkin": "2024-04-07",
-            "checkout": "2024-04-14"
-        },
-        "additionalneeds": "Breakfast, lunch and dinner"
-    }
 
 @pytest.fixture()
 def part_updt_booking_data():
@@ -73,12 +60,3 @@ def empty_booking_data():
         },
         "additionalneeds": ""
     }
-'''@pytest.fixture()
-def delete_booking(auth_session):
-
-    def full_delete(booking_id: int):
-        full_delete = auth_session.delete(f"{BASE_URL}/booking/{booking_id}")
-        assert full_delete.status_code == 201, f"Ошибка при удалении букинга с ID {booking_id}"
-
-        get_deleted_booking = auth_session.get(f"{BASE_URL}/booking/{booking_id}")
-        assert get_deleted_booking.status_code == 404, "Букинг не был удален"'''

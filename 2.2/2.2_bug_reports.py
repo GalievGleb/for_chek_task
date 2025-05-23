@@ -2,7 +2,7 @@ bug_list = ["Ошибка 1 - high",
             "Ошибка 2 - low",
             "Ошибка 3 - medium",
             "Ошибка 4 - critical",
-            "Ошибка 5 - low"]
+            "Ошибка five - low"]
 bug_list.append ("Ошибка 6 - high")
 priority_order = {
     'critical': 1,

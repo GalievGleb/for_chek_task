@@ -21,7 +21,7 @@ user_choose=int(input(f"Введите первое число от 0 до {len_
 user_choose1=int(input(f"Введите второе число от {user_choose} до {len_list-1}:"))
 print(numbers[user_choose:user_choose1])
 
-#  Задача 5: Изменение элемента списка
+#  Задача five: Изменение элемента списка
 colors = ["red","green","blue"]
 len_list = len(colors)
 user_choose=int(input(f"Введите номер цвета который хотите заменить от 1 до {len_list}:"))
