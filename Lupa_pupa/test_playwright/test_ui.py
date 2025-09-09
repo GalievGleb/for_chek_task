@@ -23,3 +23,4 @@ def test_add_items_and_checkout(browser):
     my_cart_page.start_checkout()
     my_cart_page.fill_checkout_form("Gleb", "Galiev", "1337228")
     my_cart_page.finish_checkout_and_logout()
+    #Gleb_Galiev
