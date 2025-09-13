@@ -1,0 +1,5 @@
+CHECKOUT_BUTTON_SELECTOR = '#checkout'
+FIRST_NAME_SELECTOR = '#first-name'
+LAST_NAME_SELECTOR = '#last-name'
+POSTAL_CODE_SELECTOR = '#postal-code'
+CONTINUE_BUTTON_SELECTOR = '#continue'
