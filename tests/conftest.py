@@ -5,7 +5,7 @@ import pytest
 import requests
 from playwright.sync_api import Page
 
-
+# новый коммит
 @pytest.fixture
 def login_page_test(browser) ->Page:
     """Выполняет вход через UI и возвращает страницу после авторизации

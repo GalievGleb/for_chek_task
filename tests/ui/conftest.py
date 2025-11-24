@@ -2,7 +2,7 @@ import os
 
 import pytest
 from playwright.sync_api import sync_playwright, Browser
-
+# новый коммит
 @pytest.fixture(scope="session")
 def browser() -> Browser:
     """Запускает браузер Chromium для всех тестов в сессии

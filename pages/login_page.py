@@ -2,7 +2,7 @@ from asyncio import timeout
 from locators.locators import LoginPageLocators as L
 from pages.base_page import BasePage
 
-
+# новый коммит
 class LoginPage(BasePage):
     def __init__(self, page):
         """Инициализирует страницу входа
