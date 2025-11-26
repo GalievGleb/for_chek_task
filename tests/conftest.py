@@ -34,7 +34,7 @@ def login_page_test(browser) ->Page:
         yield page
     with allure.step('Close page'):
         page.close()
-    # page.wait_for_url('https://app.clickup.com/90151913392/v/l/2kyqj1xg-475?pr=90157968226', timeout=10000)
+
 
 
 @pytest.fixture(scope="function")
