@@ -10,10 +10,10 @@ HEADERS = {
     "Content-Type": "application/json"
 }
 
-
+# новый коммит
 
 @pytest.fixture
-def create_task() -> None:
+def create_task():
     """Создаёт временную задачу через API и возвращает её идентификатор
 
     Args:

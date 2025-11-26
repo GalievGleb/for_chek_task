@@ -3,7 +3,7 @@ import os
 import allure
 import requests
 from playwright.sync_api import expect
-
+# новый коммит
 @allure.feature('Create task and delete')
 @allure.story('Create task API delete UI')
 def test_delete_card_ui(login_page_test, create_test_card):

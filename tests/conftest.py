@@ -34,7 +34,7 @@ def login_page_test(browser) ->Page:
         yield page
     with allure.step('Close page'):
         page.close()
-    # page.wait_for_url('https://app.clickup.com/90151913392/v/l/2kyqj1xg-475?pr=90157968226', timeout=10000)
+
 
 
 @pytest.fixture(scope="function")
@@ -47,7 +47,6 @@ def create_test_card() -> dict:
     Return:
         task: Словарь с данными созданной задачи
     """
-    import requests
     with allure.step('Data for created'):
         BASE_URL = 'https://api.clickup.com/api/v2'
         api_key = 'pk_254555049_SFOSPHULNOQODBT1ZOSJF8W885ROPC4R'

@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-
+# новый коммит
 def get_env_variable(name):
     value = os.getenv(name)
     if not value:

@@ -1,5 +1,5 @@
 
-
+# локаторы для login_page
 class LoginPageLocators:
     mail_input = '#login-email-input'
     password_input = '#login-password-input'
