@@ -5,7 +5,7 @@ import pytest
 import requests
 from playwright.sync_api import Page
 
-# новый коммит
+
 @pytest.fixture
 def login_page_test(browser) ->Page:
     """Выполняет вход через UI и возвращает страницу после авторизации
@@ -47,7 +47,6 @@ def create_test_card() -> dict:
     Return:
         task: Словарь с данными созданной задачи
     """
-    import requests
     with allure.step('Data for created'):
         BASE_URL = 'https://api.clickup.com/api/v2'
         api_key = 'pk_254555049_SFOSPHULNOQODBT1ZOSJF8W885ROPC4R'

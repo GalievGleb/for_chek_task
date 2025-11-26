@@ -2,7 +2,7 @@ from playwright.sync_api import Locator, Page
 
 # новый коммит
 class BasePage:
-    def __init__(self, page: Page) ->None:
+    def __init__(self, page: Page):
         """Инициализирует базовую страницу
 
         Args:
